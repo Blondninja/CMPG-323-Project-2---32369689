@@ -1,4 +1,8 @@
+using CMPG323_API_Project2;
+using CMPG323_API_Project2.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +30,9 @@ namespace CMPG323_API_Project2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<ConnectedOfficeContext>(options => options.UseSqlServer("name=ConnectionString:DefaultConnection"));
+            services.AddSwaggerGen(options => { options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CMPG323-API-Project2", Version = "v2", Description = "Test CMPG323-API-Project2", }); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +53,8 @@ namespace CMPG323_API_Project2
             {
                 endpoints.MapControllers();
             });
+            app.UseSwagger();
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v2/swagger.json", "Testing my CMPG323-API-Project2"));
         }
     }
 }
