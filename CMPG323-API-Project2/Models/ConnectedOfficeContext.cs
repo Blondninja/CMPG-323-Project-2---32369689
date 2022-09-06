@@ -1,4 +1,6 @@
 ﻿using System;
+using CMPG323_API_Project2.Authentication;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -8,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CMPG323_API_Project2.Models
 {
-    public partial class ConnectedOfficeContext : DbContext
+    public partial class ConnectedOfficeContext : IdentityDbContext<ApplicationUser>
     {
         public ConnectedOfficeContext()
         {
@@ -28,7 +30,7 @@ namespace CMPG323_API_Project2.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=ConnectedOffice");
+                optionsBuilder.UseSqlServer("ConnStr");
             }
         }
 
@@ -76,6 +78,8 @@ namespace CMPG323_API_Project2.Models
             });
 
             OnModelCreatingPartial(modelBuilder);
+            base.OnModelCreating(modelBuilder);
+
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
