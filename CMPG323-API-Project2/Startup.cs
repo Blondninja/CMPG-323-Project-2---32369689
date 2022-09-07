@@ -13,6 +13,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
+using System;
+using Microsoft.Extensions.Azure;
+using Azure.Storage.Queues;
+using Azure.Storage.Blobs;
+using Azure.Core.Extensions;
 
 namespace CMPG323_API_Project2
 {
@@ -31,7 +36,7 @@ namespace CMPG323_API_Project2
             services.AddControllers();
 
             // For Entity Framework  
-            services.AddDbContext<ConnectedOfficeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
+            services.AddDbContext<ConnectedOfficeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConStr")));
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v2", new OpenApiInfo
                 {

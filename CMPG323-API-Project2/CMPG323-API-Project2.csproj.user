@@ -11,6 +11,7 @@
     <WebStackScaffolding_DbContextTypeFullName>CMPG323_API_Project2.Models.ConnectedOfficeContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Rehan\Downloads\project 2  version 2\CMPG-323-Project-2---32369689.zip version 2\CMPG-323-Project-2---32369689\CMPG323-API-Project2\Properties\PublishProfiles\CMPG323-API-Project220220907205533 - Web Deploy2.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
