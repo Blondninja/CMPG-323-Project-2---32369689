@@ -1,5 +1,6 @@
 # CMPG-323-Project-2---32369689
 API DEVELOPMENT  PROJECT 2 
+note* (i had a problem with my machine regarding the configuration and i have shared with Jacqui and Marijke they know it hence when used a diffrent pc it was showing the swagger output and when i test with mines it give configuration problem, in case if you have problems with it pliz take the lecturers in consideeration i have shared this with them and they suggested that i should use a diffrent machine)
 
 purpose of the project:
 
@@ -18,6 +19,8 @@ we have used the gitignored so that the appsetting should not be accesed by the 
 the Api  and database is hosted on the azure and its has been granted access .
 
 i have pushed the assignment on the github in case if i loose any data i can retrieve it from the github for backend purpose , and i have publish the project to the Azure and its publish successfully.
+
+i have added 5 endpoints and made sure they are under owner 
 
 
 REFERENCE LIST:
